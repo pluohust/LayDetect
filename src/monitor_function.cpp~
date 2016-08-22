@@ -109,12 +109,12 @@ VOID ImageLoad(IMG img, VOID *v)
 		RTN_Close(rtnpthread_cond_timedwait);
 	}
 	
-	RTN rtnmain = RTN_FindByName(img, "main");
-	if ( RTN_Valid( rtnmain ))
+	RTN rtngettimeofday = RTN_FindByName(img, "gettimeofday");
+	if ( RTN_Valid( rtngettimeofday ))
 	{
-		RTN_Open(rtnmain);
-		RTN_InsertCall(rtnmain, IPOINT_BEFORE, AFUNPTR(Beforemain), IARG_END);
-		RTN_Close(rtnmain);
+		RTN_Open(rtngettimeofday);
+		RTN_InsertCall(rtngettimeofday, IPOINT_BEFORE, AFUNPTR(Beforegettimeofday), IARG_END);
+		RTN_Close(rtngettimeofday);
 	}
 	RTN rtnsprintf = RTN_FindByName(img, "sprintf");
 	if ( RTN_Valid( rtnsprintf ))

@@ -14,6 +14,6 @@ VOID BeforeSprintf(ADDRINT funcflag, ADDRINT dest, ADDRINT source, ADDRINT lengt
 VOID BeforeCalloc(ADDRINT num, ADDRINT size, THREADID threadid);
 VOID AfterCalloc(ADDRINT ret,THREADID threadid);
 VOID BeforeFree(ADDRINT address, THREADID threadid);
-VOID Beforemain();
+VOID Beforegettimeofday();
 
 #endif

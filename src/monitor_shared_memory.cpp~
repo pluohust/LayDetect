@@ -351,8 +351,8 @@ VOID BeforeFree(ADDRINT address, THREADID threadid)
 	PIN_ReleaseLock(&shareaddrlock);
 }
 
-VOID Beforemain()
+VOID Beforegettimeofday()
 {
-	Imgfile<<"main"<<endl;
+	Imgfile<<"gettimeofday"<<endl;
 	startmallocmonitor=true;
 }
